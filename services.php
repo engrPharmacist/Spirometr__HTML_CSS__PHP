@@ -81,108 +81,171 @@
     <!-- ======= Our Services Section ======= -->
     <section id="services-list" class="services-list">
       <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Wprowadź parametry swojego badania</h2>
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="150">
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-4 " >
-                <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-              </div>
-              <div class="col-md-4 ">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-              </div>
-              <div class="col-md-4 ">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-              </div>
-            </div>  
-          </div>
+        <div class="section-header justify-content-center">
+          <h2>Wypełnij krótki formularz</h2>
         </div>
+      </div>
       <div class="container position-relative" data-aos="fade-up">
-
-        <div class="row gy-4 d-flex justify-content-end">
-          <form action="forms/sprawdzanie.php" method="post" role="form" class="php-email-form">
-            
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-                </div>
-                <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-                </div>
-              </div>  
+        <div class="container position-relative d-flex flex-column align-items-center">
+          <h3>Podaj informacje o sobie</h3>
+        </div>
+        <div class="row gy-4 d-flex ">
+        <form role="form">
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <!-- <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required> -->
+                <select name="plec" class="form-control"  id="plec">
+                  <option>Płeć</option>
+                  <option>Mężczyzna</option>
+                  <option>Kobieta</option>
+                </select>
+              </div>
+              <div class="col-2">
+                <!-- <input type="text" name="name" class="form-control" id="name" placeholder="wiek" required> -->
+                <input type="number" name="wiek" class="form-control" id="wiek" min="1" max="120" placeholder="wiek w latach">
+              </div>
+              <div class="col-2">
+                <input type="number" name="wzrost" class="form-control" id="wzrost" min="100" max="250" placeholder="wzrost w cm">
+              </div>
             </div>
-            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150"></div>
-              <div class="form-group mt-3">
-                <div class="row">
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                  </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                  </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-                  </div>
+            <div class="form-group mt-3">
+              <div class="container position-relative d-flex flex-column align-items-center">
+                <h3>Wprowadź wyniki swojego badania</h3>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-2 form-group">
+                  <input type="number" name="FEV1L" class="form-control" id="FEV1L" placeholder="FEV1 L" min="1" max="10" step="0.01">
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="FEV1P" class="form-control" id="FEV1P" placeholder="FEV1 %"  min="30" max="200" required>
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="VCmaxL" class="form-control" id="VCmaxL" placeholder="VCmax L" min="1" max="10" step="0.01">
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="VCmaxP" class="form-control" id="VCmaxP" placeholder="VCmax %" min="30" max="200" required>
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="Tiffenmax" class="form-control" id="Tiffenmax" placeholder="Tiffen/max" min="20" max="120">
                 </div>
               </div>
               <div class="form-group mt-3">
                 <div class="row ">
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
+                    <input type="number" name="PEFL" class="form-control" id="PEFL" placeholder="PEF L" min="2" max="20" step="0.1">
                   </div>
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                  </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
+                    <input type="number" name="PEFP" class="form-control" id="PEFP" placeholder="PEF %" min="30" max="200" required>
                   </div>
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
+                    <input type="number" name="FEF50L" class="form-control" id="FEF50L" placeholder="FEF50 L" min="1" max="10" step="0.01">
+                  </div>
+                  <div class="col-md-2 form-group ">
+                    <input type="number" name="FEF50P" class="form-control" id="FEF50P" placeholder="FEF50 %" min="30" max="200" required>
                   </div>
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
+                    <input type="number" name="FEF2575L" class="form-control" id="FEF2575L" placeholder="FEF25/75 L" min="1" max="10" step="0.01">
                   </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
+                  <div class="col-md-2 form-group">
+                    <input type="number" name="FEF2575P" class="form-control" id="FEF2575P" placeholder="FEF25/75 %" min="30" max="200" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <div class="row justify-content-center">
+                  <div class="col-md-2 form-group">
+                    <div class="text-center"><button type="submit" name="submit" value="submit">Zatwierdź</button></div>
                   </div>
                 </div>
               </div>
             </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div><!-- End Contact Form -->
-
+          </form>
         </div>
+                      <div class="form-group mt-3">
+          <div class="container position-relative d-flex flex-column align-items-center">
+            <?php
+//              $plec=0.1;
+//              $wiek=0.1;
+//              $wzrost=0.1;
+//              $FEV1L=0.1;
+//              $FEV1P=0.1;
+//              $VCmaxL=0.1;
+//              $VCmaxP=0.1;
+//              $Tiffenmax=0.1;
+//              $PEFL=0.1;
+//              $PEFP=0.1;
+//              $FEF50L=0.1;
+//              $FEF50P=0.1;
+//              $FEF2575L=0.1;
+//              $FEF2575P=0.1;
+              
+//              $wyniki=0;
+              
+                if(isset($_GET['submit'])){
+                  $plec = $_GET['plec'];
+                  $wiek = $_GET['wiek'];
+                  $wzrost = $_GET['wzrost'];
 
+                  $FEV1L = $_GET['FEV1L'];
+                  $FEV1P = $_GET['FEV1P'];
+                  $VCmaxL = $_GET['VCmaxL'];
+                  $VCmaxP = $_GET['VCmaxP'];
+                  $Tiffenmax = $_GET['Tiffenmax'];
+
+                  $PEFL = $_GET['PEFL'];
+                  $PEFP = $_GET['PEFP'];
+                  $FEF50L = $_GET['FEF50L'];
+                  $FEF50P = $_GET['FEF50P'];
+                  $FEF2575L = $_GET['FEF2575L'];
+                  $FEF2575P = $_GET['FEF2575P'];
+//                  $wyniki=1;
+
+                  echo $FEV1P;
+                    echo"dupa";
+                  if($FEV1P>0.8)
+                  {
+                    echo'<p>Twoje drogi oddechowe są drożne</p>';
+                  }
+                  elseif($FEV1P>0.7)
+                  {
+                    echo'<p>Wyniki drożności dróg oddechowych są na granicy alarmu</p>';
+                    echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
+                  }
+                  else
+                  {
+                    echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
+                    echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
+                  }
+
+                  if($VCmaxP>0.8)
+                  {
+                    echo'<p>Objętość Twoich płuc jest w normie</p>';
+                  }
+                  elseif($VCmaxP<0.8)
+                  {
+                    echo'<p>Twoje płuca są mniejsze niż u przeciętnego pacjęta</p>';
+                    echo'<p>Kontroluj saturację krwi, rozważ kontakt z lekarzem </p>';
+                  }
+
+                  if($PEFP>0.8){
+                    echo'<p>Szczytowy przepływ Twoich płuc jest prawidłowy</p>';
+                  }
+                  elseif($PEFP>0.7)
+                  {
+                    echo'<p>Szczytowy przepływ Twoich płuc jest dolnej granicy normy</p>';
+                    echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
+                  }
+                  else
+                  {
+                    echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
+                    echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
+                }
+              }
+            ?>
+          </div>
+        </div>
       </div>
     </section><!-- End Contact Section -->
-
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">

@@ -141,13 +141,13 @@
                     <input type="number" name="FEF50L" class="form-control" id="FEF50L" placeholder="FEF50 L" min="1" max="10" step="0.01">
                   </div>
                   <div class="col-md-2 form-group ">
-                    <input type="number" name="FEF50P" class="form-control" id="FEF50P" placeholder="FEF50 %" min="30" max="200" required>
+                    <input type="number" name="FEF50P" class="form-control" id="FEF50P" placeholder="FEF50 %" min="30" max="200" >
                   </div>
                   <div class="col-md-2 form-group">
                     <input type="number" name="FEF2575L" class="form-control" id="FEF2575L" placeholder="FEF25/75 L" min="1" max="10" step="0.01">
                   </div>
                   <div class="col-md-2 form-group">
-                    <input type="number" name="FEF2575P" class="form-control" id="FEF2575P" placeholder="FEF25/75 %" min="30" max="200" required>
+                    <input type="number" name="FEF2575P" class="form-control" id="FEF2575P" placeholder="FEF25/75 %" min="30" max="200" >
                   </div>
                 </div>
               </div>
@@ -164,22 +164,7 @@
                       <div class="form-group mt-3">
           <div class="container position-relative d-flex flex-column align-items-center">
             <?php
-//              $plec=0.1;
-//              $wiek=0.1;
-//              $wzrost=0.1;
-//              $FEV1L=0.1;
-//              $FEV1P=0.1;
-//              $VCmaxL=0.1;
-//              $VCmaxP=0.1;
-//              $Tiffenmax=0.1;
-//              $PEFL=0.1;
-//              $PEFP=0.1;
-//              $FEF50L=0.1;
-//              $FEF50P=0.1;
-//              $FEF2575L=0.1;
-//              $FEF2575P=0.1;
-              
-//              $wyniki=0;
+
               
                 if(isset($_GET['submit'])){
                   $plec = $_GET['plec'];
@@ -198,18 +183,18 @@
                   $FEF50P = $_GET['FEF50P'];
                   $FEF2575L = $_GET['FEF2575L'];
                   $FEF2575P = $_GET['FEF2575P'];
-//                  $wyniki=1;
 
-                  echo $FEV1P;
-                    echo"dupa";
-                  if($FEV1P>0.8)
+                  if($FEV1P>80 || $PEFP>80)
                   {
                     echo'<p>Twoje drogi oddechowe są drożne</p>';
+                    echo'<p>Szczytowy przepływ Twoich płuc jest prawidłowy</p>';
                   }
-                  elseif($FEV1P>0.7)
+
+                  elseif($FEV1P>70 && $PEFP>70)
                   {
-                    echo'<p>Wyniki drożności dróg oddechowych są na granicy alarmu</p>';
-                    echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
+                    echo'<p>Wyniki drożności dróg oddechowych są na granicy alarmu.</p>';
+                    echo'<p>Szczytowy przepływ Twoich płuc jest dolnej granicy normy.</p>';
+                    echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem.</p>';
                   }
                   else
                   {
@@ -217,29 +202,16 @@
                     echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
                   }
 
-                  if($VCmaxP>0.8)
+                  if($VCmaxP>80)
                   {
                     echo'<p>Objętość Twoich płuc jest w normie</p>';
                   }
-                  elseif($VCmaxP<0.8)
+                  elseif($VCmaxP<80)
                   {
+                    echo'<p> </p>';
                     echo'<p>Twoje płuca są mniejsze niż u przeciętnego pacjęta</p>';
-                    echo'<p>Kontroluj saturację krwi, rozważ kontakt z lekarzem </p>';
+                    echo'<p>Kontroluj saturację krwi oraz rozważ kontakt z lekarzem </p>';
                   }
-
-                  if($PEFP>0.8){
-                    echo'<p>Szczytowy przepływ Twoich płuc jest prawidłowy</p>';
-                  }
-                  elseif($PEFP>0.7)
-                  {
-                    echo'<p>Szczytowy przepływ Twoich płuc jest dolnej granicy normy</p>';
-                    echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
-                  }
-                  else
-                  {
-                    echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
-                    echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
-                }
               }
             ?>
           </div>
@@ -264,8 +236,9 @@
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <p><span style="font-family: Brush Script MT;">
+                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  </span>
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -297,7 +270,7 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                Student Automatyki Robotyki i Systemów Sterowania z indexem S176326. Wielbiciel szerzenia świadomości historycznej. Fan szeroko pojętej motoryzacji.
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -313,28 +286,12 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Jyn dis tutorial aj wjyl szoł ju hał tu prgraaam e sajt jusing Pi EJcz Pi. Zis łil help ju to pas jor egzam łiwałt łorking spajrometri diwajs. Supskrajp ant gif dem sam pozitif grejd mister Doktor  
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                   <h3>Technical Babaji</h3>
                   <h4>Hinduski youtuber</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
                 </div>
               </div>
             </div><!-- End testimonial item -->
@@ -345,6 +302,43 @@
 
       </div>
     </section><!-- End Testimonials Section -->
+
+        <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container position-relative" data-aos="fade-up">
+
+        <div class="row gy-4 d-flex justify-content-end">
+
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="info-item d-flex">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h4>Lokalizacja:</h4>
+                <p><a href="https://goo.gl/maps/FRBPL5wMWbCpEScL8">Jaskinia dziekana sala 304 [GG]</a></p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h4>Email:</h4>
+                <p><a href="mailto:python.zawsze.dziala@gmail.com">python.zawsze.dziala@gmail.com</a></p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.7181743489654!2d18.617475507127228!3d54.37432673251638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd7499f81f1717%3A0x7c4025128e94da10!2sPolitechnika%20Gda%C5%84ska.Wydzia%C5%82%20Elektrotechniki%20i%20Automatyki.Katedra%20Mechatroniki%20i%20In%C5%BCynierii%20Wysokich%20Napi%C4%99%C4%87!5e0!3m2!1spl!2spl!4v1655219352907!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
